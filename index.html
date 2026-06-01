@@ -1,45 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name — Developer</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paritosh Chauhan — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#dcdcd8;--bg2:#e4e4e0;--card:#ffffff;--card2:#f5f5f3;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+  --text:#1a1a1a;--muted:#666660;--faint:#999993;
+  --accent:#2d6a4f;--blue:#1d4e89;--tag-bg:#ebebea;
+  --font:'DM Sans',sans-serif;--mono:'DM Mono',monospace;--serif:'Instrument Serif',serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.6;min-height:100vh}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#bbbbb5;border-radius:10px}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;background:linear-gradient(160deg,#c8c8c4 0%,#d8d8d4 40%,#e0dfd8 100%);overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:0 2rem 3rem}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-top:3.5rem;margin-bottom:0.25rem;text-align:center}
+.hero-title{font-family:var(--serif);font-size:clamp(3.2rem,10vw,7rem);font-weight:400;line-height:0.95;letter-spacing:-0.02em;text-align:center;color:var(--text);margin-bottom:2.5rem;position:relative;z-index:2}
+.hero-center{display:grid;grid-template-columns:220px 1fr 220px;gap:1.5rem;width:100%;max-width:980px;align-items:start;position:relative;z-index:2}
+.hero-photo-wrap{grid-column:2;grid-row:1;display:flex;justify-content:center;position:relative}
+.hero-photo{width:240px;height:320px;background:linear-gradient(160deg,#b0b0aa,#888882);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden;border:1px solid var(--border2)}
+.hero-photo::after{content:'YOUR PHOTO HERE';position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.6)}
+.hero-photo.has-photo::after{display:none}
+.hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.float-card{background:var(--card);border-radius:14px;box-shadow:0 2px 20px rgba(0,0,0,0.1);border:1px solid var(--border);padding:1rem 1.1rem}
+.card-bio{grid-column:1;grid-row:1;align-self:center}
+.card-bio p{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:0.75rem}
+.card-bio .hire-btn{display:inline-block;background:var(--text);color:#fff;font-size:11px;font-family:var(--mono);padding:6px 16px;border-radius:20px;text-decoration:none;transition:background 0.2s}
+.card-bio .hire-btn:hover{background:#444}
+.card-links{grid-column:3;grid-row:1;align-self:center;display:flex;flex-direction:column;gap:6px}
+.card-links a{display:flex;align-items:center;gap:8px;font-size:12px;font-family:var(--mono);color:var(--muted);text-decoration:none;padding:5px 8px;border-radius:8px;transition:background 0.2s}
+.card-links a:hover{background:var(--tag-bg)}
+.card-links i{font-size:15px;color:var(--text)}
+.status-badge{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:5px 14px;white-space:nowrap;font-family:var(--mono);font-size:10px;color:var(--muted);display:flex;align-items:center;gap:6px;box-shadow:0 2px 12px rgba(0,0,0,0.1)}
+.sdot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-contact-row{grid-column:1/-1;margin-top:2.5rem;display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap}
+.contact-pill{background:var(--card);border:1px solid var(--border2);border-radius:24px;padding:7px 16px;font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;text-decoration:none;transition:box-shadow 0.2s}
+.contact-pill:hover{box-shadow:0 4px 14px rgba(0,0,0,0.12)}
+.contact-pill i{font-size:14px;color:var(--text)}
+
+/* TOOLS STRIP */
+.tools-strip{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0.9rem 2rem;display:flex;align-items:center;justify-content:center;gap:0.65rem;flex-wrap:wrap}
+.tools-label{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:0.1em}
+.tool-icon{width:34px;height:34px;border-radius:8px;background:var(--tag-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:default;transition:transform 0.15s;object-fit:contain;padding:4px}
+.tool-icon:hover{transform:translateY(-3px)}
+.tools-sep{width:1px;height:26px;background:var(--border2)}
+
+/* MAIN */
+.main{max-width:980px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.two-col{display:grid;grid-template-columns:240px 1fr;gap:1.5rem;align-items:start}
+.sidebar{display:flex;flex-direction:column;gap:1rem;position:sticky;top:1.5rem}
+.s-card{background:var(--card);border-radius:14px;border:1px solid var(--border);padding:1.1rem 1.25rem}
+.s-label{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--faint);text-transform:uppercase;margin-bottom:0.65rem}
+.s-body{font-size:12px;color:var(--muted);line-height:1.6}
+.skill-btn{display:block;width:100%;text-align:left;background:var(--tag-bg);border:none;border-radius:8px;padding:7px 12px;font-family:var(--font);font-size:12px;color:var(--text);cursor:pointer;margin-bottom:5px;transition:background 0.15s}
+.skill-btn:hover{background:#e0e0db}
+.skill-btn.active{background:var(--text);color:#fff}
+.stat-row{display:flex;justify-content:space-between;gap:6px}
+.stat-mini{text-align:center;flex:1}
+.stat-mini .n{font-size:20px;font-weight:600;color:var(--text)}
+.stat-mini .l{font-family:var(--mono);font-size:9px;color:var(--faint);display:block}
+.main-col{display:flex;flex-direction:column;gap:1.25rem}
+.section-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--faint);text-transform:uppercase;margin-bottom:0.75rem;display:block}
+.card{background:var(--card);border-radius:14px;border:1px solid var(--border);padding:1.4rem 1.5rem;transition:box-shadow 0.2s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07)}
+
+/* JOURNEY */
+.journey-item{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.journey-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.ji-icon{width:40px;height:40px;border-radius:10px;background:var(--tag-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ji-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:0.3rem}
+.ji-title{font-size:14px;font-weight:600}
+.ji-period{font-family:var(--mono);font-size:10px;color:var(--faint);white-space:nowrap}
+.ji-role{font-size:12px;color:var(--text);font-weight:500;margin-bottom:0.3rem}
+.ji-company{font-size:12px;color:var(--muted);margin-bottom:0.4rem;font-family:var(--mono)}
+.ji-desc{font-size:12px;color:var(--muted);line-height:1.7}
+.ji-desc li{margin-left:1rem;margin-bottom:2px}
+.proj-img-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:1rem}
+.proj-img{border-radius:8px;height:72px;background:linear-gradient(135deg,var(--tag-bg),var(--bg2));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px}
+.tag-row{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.6rem}
+.tag{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:5px;background:var(--tag-bg);color:var(--muted);border:1px solid var(--border)}
+.tag.blue{background:#dbeafe;color:#1d4e89;border-color:#bfdbfe}
+.tag.green{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+.tag.amber{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.tag.purple{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe}
+.tag.red{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+
+/* CERTS */
+.cert-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cert-item{background:var(--tag-bg);border-radius:10px;border:1px solid var(--border);padding:0.75rem;text-align:center;transition:transform 0.15s}
+.cert-item:hover{transform:translateY(-2px)}
+.cert-icon{font-size:22px;display:block;margin-bottom:5px}
+.cert-name{font-size:11px;font-weight:600;margin-bottom:2px}
+.cert-org{font-family:var(--mono);font-size:9px;color:var(--faint)}
+
+/* SKILL BARS */
+.skill-bar-wrap{margin-bottom:10px}
+.skill-bar-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
+.skill-bar-track{height:4px;background:var(--tag-bg);border-radius:10px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:10px;background:var(--text);transition:width 1s ease}
+
+footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--faint);border-top:1px solid var(--border)}
+
+@media(max-width:700px){
+  .two-col{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .hero-center{grid-template-columns:1fr}
+  .card-bio,.card-links{grid-column:1;grid-row:auto}
+  .hero-photo-wrap{grid-column:1}
+  .proj-img-row{grid-template-columns:repeat(2,1fr)}
+  .cert-row{grid-template-columns:repeat(2,1fr)}
+}
+.fade{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+</style>
 </head>
 <body>
 
-  <nav>
-    <span class="logo">YourName</span>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">software engineer · b.tech cse </div>
+  <h1 class="hero-title">PARITOSH CHAUHAN</h1>
 
-  <header id="hero">
-    <h1>Hi, I'm <span class="accent">Your Name</span></h1>
-    <p>Frontend developer building things for the web.</p>
-    <a href="#projects" class="btn">See my work</a>
-  </header>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <article class="project-card">
-        <h3>Project One</h3>
-        <p>A short description of what it does and what you learned.</p>
-        <div class="tags">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span>
-        </div>
-        <a href="#" target="_blank">View project</a>
-      </article>
+  <div class="hero-center">
+    <div class="float-card card-bio fade">
+      <div class="s-label">About Me</div>
+      <p>CSE B.Tech third year student with curiosity, dedication, and a penchant for self-study. Passionate about solving problems with a systematic, disciplined approach.</p>
+      <a href="resume_10_5_26.pdf" class="hire-btn" download>Download Resume</a>
     </div>
-  </section>
 
-  <footer id="contact">
-    <p>Let's connect — <a href="mailto:you@email.com">you@email.com</a></p>
-  </footer>
+    <div class="hero-photo-wrap fade">
+      <div class="hero-photo has-photo"><img src="Gemini_Generated_Image_wg6s5wwg6s5wwg6s.png" alt="Paritosh photo"></div>
+      <div class="status-badge">
+        <span class="sdot"></span> Open to Internships &amp; Opportunities
+      </div>
+    </div>
 
+    <div class="float-card card-links fade">
+      <a href="https://github.com/paritoshchauhan01" target="_blank"><i class="ti ti-brand-github"></i> paritoshchauhan01</a>
+      <a href="https://linkedin.com/in/paritosh-chauhan-144499244" target="_blank"><i class="ti ti-brand-linkedin"></i> @paritosh</a>
+      <a href="mailto:chauhan.paritosh01@gmail.com"><i class="ti ti-mail"></i> Gmail</a>
+    </div>
+
+    <div class="hero-contact-row fade">
+      <a href="mailto:chauhan.paritosh01@gmail.com" class="contact-pill"><i class="ti ti-mail"></i> chauhan.paritosh01@gmail.com</a>
+      <a href="tel:+918791741601" class="contact-pill"><i class="ti ti-phone"></i> +91 8791741601</a>
+      <span class="contact-pill"><i class="ti ti-map-pin"></i> Dehradun, India</span>
+      <a href="https://github.com/paritoshchauhan01" class="contact-pill" target="_blank"><i class="ti ti-brand-github"></i> github.com/paritoshchauhan01</a>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS STRIP -->
+<div class="tools-strip fade">
+  <span class="tools-label">TOOLS &amp; STACK</span>
+  <div class="tools-sep"></div>
+  <img class="tool-icon" src="https://cdn.simpleicons.org/python" alt="Python" title="Python">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/cplusplus" alt="C++" title="C++">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/react" alt="React.js" title="React.js">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/flask/000000" alt="Flask" title="Flask">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/opencv" alt="OpenCV" title="OpenCV">
+  <svg class="tool-icon" role="img" aria-label="AWS" title="AWS" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FF9900" d="M19.36 10.04A5.5 5.5 0 0 0 13 6.5c-1.11 0-2.17.31-3.07.86A4 4 0 0 0 6 11.5C6 13.43 7.57 15 9.5 15h9c1.38 0 2.5-1.12 2.5-2.5 0-1.26-.97-2.28-1.64-2.46z"/>
+  </svg>
+  <div class="tools-sep"></div>
+  <img class="tool-icon" src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" title="MongoDB">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/mysql" alt="MySQL" title="MySQL">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/git" alt="Git" title="Git">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/github/000000" alt="GitHub" title="GitHub">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/linux" alt="Linux" title="Linux">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/qemu" alt="QEMU" title="QEMU">
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main">
+  <div class="two-col">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="s-card fade">
+        <div class="s-label">Core Expertise</div>
+        <div class="s-body" style="margin-bottom:0.85rem">From low-level kernel development to cloud deployments — full-stack problem solver.</div>
+        <button class="skill-btn active">Systems Programming</button>
+        <button class="skill-btn">Computer Vision</button>
+        <button class="skill-btn">Backend Engineering</button>
+        <button class="skill-btn">Cloud (AWS)</button>
+        <button class="skill-btn">Security & Malware Analysis</button>
+        <button class="skill-btn">Algorithm Design</button>
+      </div>
+
+      <div class="s-card fade">
+        <div class="s-label">Proficiency</div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>C / C++</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0" data-w="92%"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Python</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0" data-w="90%"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>React.js / Flask</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0" data-w="78%"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>MongoDB / MySQL</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0" data-w="80%"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>AWS / Cloud</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0" data-w="75%"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>OpenCV / DeepFace</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0" data-w="85%"></div></div>
+        </div>
+      </div>
+
+      <div class="s-card fade">
+        <div class="s-label">Quick Stats</div>
+        <div class="stat-row">
+          <div class="stat-mini"><div class="n">4+</div><span class="l">Projects</span></div>
+          <div class="stat-mini"><div class="n">8.14</div><span class="l">CGPA</span></div>
+          <div class="stat-mini"><div class="n">3</div><span class="l">AWS Certs</span></div>
+        </div>
+      </div>
+
+      <div class="s-card fade">
+        <div class="s-label">Education</div>
+        <div style="font-size:13px;font-weight:600">B.Tech — CSE</div>
+        <div style="font-size:12px;color:var(--muted);font-family:var(--mono);margin-top:4px">Graphic Era Hill University</div>
+        <div style="font-size:11px;color:var(--faint);font-family:var(--mono)">2023 – 2027 · CGPA 8.18</div>
+        <div class="tag-row" style="margin-top:8px">
+          <span class="tag">OS</span><span class="tag">DBMS</span>
+          <span class="tag">CN</span><span class="tag">DSA</span>
+          <span class="tag">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="s-card fade">
+        <div class="s-label">Find Me Online</div>
+        <a href="https://github.com/paritoshchauhan01" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--blue);text-decoration:none;display:block;margin-bottom:6px"><i class="ti ti-brand-github" style="font-size:13px;vertical-align:-1px;margin-right:4px"></i>github.com/paritoshchauhan01</a>
+        <a href="https://linkedin.com/in/paritosh-chauhan-144499244" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--blue);text-decoration:none;display:block"><i class="ti ti-brand-linkedin" style="font-size:13px;vertical-align:-1px;margin-right:4px"></i>linkedin.com/in/paritosh</a>
+      </div>
+
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.25rem">
+        <span style="font-size:18px;font-weight:600;letter-spacing:-0.02em">Projects</span>
+        <span style="font-family:var(--mono);font-size:10px;color:var(--faint)">2024 → present</span>
+      </div>
+
+      <!-- PROJECT 1 -->
+      <div class="card fade">
+        <div class="journey-item">
+          <div class="ji-icon">🧠</div>
+          <div>
+            <div class="ji-head">
+              <span class="ji-title">Emotion-Aware Resource Management for OS</span>
+              <span class="ji-period">Oct 2025 – Jan 2026</span>
+            </div>
+            <div class="ji-role">Built the entire multiprocessing pipeline, OS listener, real-time socket-mode handler, and did system benchmarking.</div>
+            <ul class="ji-desc">
+              <li>Built an emotion-detecting OS using camera &amp; AI that adapts CPU and memory in real-time.</li>
+              <li>Developed a 32-bit kernel with UART serial I/O and dynamic schedulers (SJF, Round Robin, Lottery).</li>
+              <li>Created a Python emotion pipeline that switches between Calm / Relaxed / Stressed modes for better performance.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag red">C / NASM</span>
+              <span class="tag blue">Python</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag amber">DeepFace</span>
+              <span class="tag">QEMU</span>
+              <span class="tag green">JSON Sockets</span>
+              <span class="tag">Tkinter</span>
+              <span class="tag">Linux/Ubuntu</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-img-row">
+          <div class="proj-img">🧠</div>
+          <div class="proj-img">⚙️</div>
+          <div class="proj-img">📊</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="card fade">
+        <div class="journey-item">
+          <div class="ji-icon">🗺️</div>
+          <div>
+            <div class="ji-head">
+              <span class="ji-title">Optimal Route Analyser</span>
+              <span class="ji-period">2025</span>
+            </div>
+            <div class="ji-role">Integrated the route-optimization algorithm with mapping components and built the full visual map interface.</div>
+            <ul class="ji-desc">
+              <li>Finds the fastest routes between multiple destinations using smart optimization logic.</li>
+              <li>Displays fully visible and accurate route paths on a map for easy travel planning.</li>
+              <li>Supports multi-stop trip scheduling with data-driven, easy-to-understand route outputs.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag blue">Python</span>
+              <span class="tag purple">NetworkX</span>
+              <span class="tag amber">Flask</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag green">OpenStreetMap</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-img-row">
+          <div class="proj-img">🗺️</div>
+          <div class="proj-img">🛣️</div>
+          <div class="proj-img">📍</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="card fade">
+        <div class="journey-item">
+          <div class="ji-icon">👁️</div>
+          <div>
+            <div class="ji-head">
+              <span class="ji-title">Attendance System</span>
+              <span class="ji-period">2024</span>
+            </div>
+            <div class="ji-role">Independently enhanced the full system — computer vision pipeline, database design, and the user interface.</div>
+            <ul class="ji-desc">
+              <li>Built a face-recognition system that automatically detects and tracks attendance accurately.</li>
+              <li>Maintains secure, real-time attendance records in a structured database.</li>
+              <li>Provides a simple interface for registering users, managing face data, and viewing logs.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag blue">Python</span>
+              <span class="tag green">OpenCV</span>
+              <span class="tag">NumPy</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-img-row">
+          <div class="proj-img">📸</div>
+          <div class="proj-img">🗄️</div>
+          <div class="proj-img">✅</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="card fade">
+        <div class="journey-item">
+          <div class="ji-icon">🔒</div>
+          <div>
+            <div class="ji-head">
+              <span class="ji-title">File and Malware Analyzer</span>
+              <span class="ji-period">2025</span>
+            </div>
+            <div class="ji-role">Individually built the complete malware analysis tool from scratch, including detection logic and reporting.</div>
+            <ul class="ji-desc">
+              <li>Performs both static and dynamic file analysis to detect suspicious or malicious behavior.</li>
+              <li>Supports malware detection and behavior inspection across multiple file types.</li>
+              <li>Automatically generates structured security reports for quick and clear review.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag blue">Python</span>
+              <span class="tag red">YARA</span>
+              <span class="tag">JSON</span>
+              <span class="tag amber">Flask</span>
+              <span class="tag purple">Sandbox</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-img-row">
+          <div class="proj-img">🔍</div>
+          <div class="proj-img">🛡️</div>
+          <div class="proj-img">📋</div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="card fade">
+        <span class="section-tag">AWS Achievements &amp; Certifications</span>
+        <div class="cert-row">
+          <div class="cert-item">
+            <span class="cert-icon">☁️</span>
+            <div class="cert-name">Cloud Essentials</div>
+            <div class="cert-org">AWS Knowledge</div>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon">🤖</span>
+            <div class="cert-name">ML Engineer Associate</div>
+            <div class="cert-org">AWS Curriculum Conclusion</div>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon">🏆</span>
+            <div class="cert-name">Cloud Practitioner</div>
+            <div class="cert-org">AWS Cloud Quest</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Paritosh Chauhan · chauhan.paritosh01@gmail.com ·</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => { bar.style.width = bar.dataset.w; });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.s-card').forEach(c => barObs.observe(c));
+
+document.querySelectorAll('.skill-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.skill-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
