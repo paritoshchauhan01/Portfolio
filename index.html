@@ -30,8 +30,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14
 .hero-center{display:grid;grid-template-columns:220px 1fr 220px;gap:1.5rem;width:100%;max-width:980px;align-items:start;position:relative;z-index:2}
 .hero-photo-wrap{grid-column:2;grid-row:1;display:flex;justify-content:center;position:relative}
 .hero-photo{width:240px;height:320px;background:linear-gradient(160deg,#b0b0aa,#888882);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden;border:1px solid var(--border2)}
-.hero-photo::after{content:'YOUR PHOTO HERE';position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.6)}
-.hero-photo.has-photo::after{display:none}
 .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
 .float-card{background:var(--card);border-radius:14px;box-shadow:0 2px 20px rgba(0,0,0,0.1);border:1px solid var(--border);padding:1rem 1.1rem}
 .card-bio{grid-column:1;grid-row:1;align-self:center}
@@ -57,6 +55,24 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14
 .tool-icon:hover{transform:translateY(-3px)}
 .tools-sep{width:1px;height:26px;background:var(--border2)}
 
+/* SKILLS SECTION */
+.skills-section{background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem}
+.skills-inner{max-width:980px;margin:0 auto}
+.skills-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem}
+.skills-title{font-size:18px;font-weight:600;letter-spacing:-0.02em}
+.skills-sub{font-family:var(--mono);font-size:10px;color:var(--faint)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.skill-category{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:1rem 1.1rem}
+.skill-cat-label{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--faint);text-transform:uppercase;margin-bottom:0.65rem;display:flex;align-items:center;gap:6px}
+.skill-cat-label i{font-size:13px;color:var(--text)}
+.skill-tag-list{display:flex;flex-wrap:wrap;gap:5px}
+.s-tag{font-family:var(--mono);font-size:10px;padding:4px 10px;border-radius:6px;background:var(--tag-bg);color:var(--muted);border:1px solid var(--border)}
+.s-tag.blue{background:#dbeafe;color:#1d4e89;border-color:#bfdbfe}
+.s-tag.green{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+.s-tag.amber{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.s-tag.purple{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe}
+.s-tag.red{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+
 /* MAIN */
 .main{max-width:980px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
 .two-col{display:grid;grid-template-columns:240px 1fr;gap:1.5rem;align-items:start}
@@ -77,18 +93,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14
 .card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07)}
 
 /* JOURNEY */
-.journey-item{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
-.journey-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.journey-item{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.25rem;margin-bottom:1rem}
 .ji-icon{width:40px;height:40px;border-radius:10px;background:var(--tag-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
 .ji-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:0.3rem}
 .ji-title{font-size:14px;font-weight:600}
 .ji-period{font-family:var(--mono);font-size:10px;color:var(--faint);white-space:nowrap}
 .ji-role{font-size:12px;color:var(--text);font-weight:500;margin-bottom:0.3rem}
-.ji-company{font-size:12px;color:var(--muted);margin-bottom:0.4rem;font-family:var(--mono)}
 .ji-desc{font-size:12px;color:var(--muted);line-height:1.7}
 .ji-desc li{margin-left:1rem;margin-bottom:2px}
-.proj-img-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:1rem}
-.proj-img{border-radius:8px;height:72px;background:linear-gradient(135deg,var(--tag-bg),var(--bg2));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px}
 .tag-row{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.6rem}
 .tag{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:5px;background:var(--tag-bg);color:var(--muted);border:1px solid var(--border)}
 .tag.blue{background:#dbeafe;color:#1d4e89;border-color:#bfdbfe}
@@ -96,6 +108,23 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14
 .tag.amber{background:#fef3c7;color:#92400e;border-color:#fde68a}
 .tag.purple{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe}
 .tag.red{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+
+/* PROJECT STATS */
+.proj-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:1rem}
+.proj-stat{background:var(--tag-bg);border:1px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;text-align:center}
+.proj-stat .ps-num{font-size:18px;font-weight:600;color:var(--text);font-family:var(--mono);display:block;line-height:1.1}
+.proj-stat .ps-label{font-family:var(--mono);font-size:9px;color:var(--faint);display:block;margin-top:2px;text-transform:uppercase;letter-spacing:0.08em}
+
+/* LIVE LINK */
+.live-link{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#166534;border:1px solid #bbf7d0;border-radius:20px;padding:4px 12px;font-family:var(--mono);font-size:10px;text-decoration:none;transition:background 0.2s;margin-top:0.5rem}
+.live-link:hover{background:#bbf7d0}
+.live-link i{font-size:12px}
+
+/* SKILL BARS */
+.skill-bar-wrap{margin-bottom:10px}
+.skill-bar-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
+.skill-bar-track{height:4px;background:var(--tag-bg);border-radius:10px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:10px;background:var(--text);transition:width 1s ease}
 
 /* CERTS */
 .cert-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -105,13 +134,22 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14
 .cert-name{font-size:11px;font-weight:600;margin-bottom:2px}
 .cert-org{font-family:var(--mono);font-size:9px;color:var(--faint)}
 
-/* SKILL BARS */
-.skill-bar-wrap{margin-bottom:10px}
-.skill-bar-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
-.skill-bar-track{height:4px;background:var(--tag-bg);border-radius:10px;overflow:hidden}
-.skill-bar-fill{height:100%;border-radius:10px;background:var(--text);transition:width 1s ease}
+/* CONTACT SECTION */
+.contact-section{background:linear-gradient(160deg,#1a1a1a 0%,#2a2a28 100%);padding:4rem 2rem}
+.contact-inner{max-width:700px;margin:0 auto;text-align:center}
+.contact-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:#666660;text-transform:uppercase;margin-bottom:0.5rem}
+.contact-heading{font-family:var(--serif);font-size:clamp(2rem,6vw,3.5rem);color:#f0f0ec;font-weight:400;line-height:1.1;margin-bottom:1rem}
+.contact-sub{font-size:13px;color:#888882;margin-bottom:2.5rem;line-height:1.7}
+.contact-cta{display:inline-flex;align-items:center;gap:10px;background:#22c55e;color:#fff;font-family:var(--mono);font-size:13px;font-weight:500;padding:14px 28px;border-radius:30px;text-decoration:none;transition:background 0.2s,transform 0.2s;margin-bottom:2rem}
+.contact-cta:hover{background:#16a34a;transform:translateY(-2px)}
+.contact-cta i{font-size:18px}
+.contact-links-row{display:flex;justify-content:center;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.c-link{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:#888882;text-decoration:none;transition:color 0.2s}
+.c-link:hover{color:#f0f0ec}
+.c-link i{font-size:16px}
+.contact-divider{width:1px;height:20px;background:#333;flex-shrink:0}
 
-footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--faint);border-top:1px solid var(--border)}
+footer{text-align:center;padding:1.5rem;font-family:var(--mono);font-size:11px;color:#444;background:#111;border-top:1px solid #222}
 
 @media(max-width:700px){
   .two-col{grid-template-columns:1fr}
@@ -119,8 +157,9 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
   .hero-center{grid-template-columns:1fr}
   .card-bio,.card-links{grid-column:1;grid-row:auto}
   .hero-photo-wrap{grid-column:1}
-  .proj-img-row{grid-template-columns:repeat(2,1fr)}
+  .proj-stats{grid-template-columns:repeat(3,1fr)}
   .cert-row{grid-template-columns:repeat(2,1fr)}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
 }
 .fade{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
 .fade.in{opacity:1;transform:translateY(0)}
@@ -130,7 +169,7 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">software engineer · b.tech cse </div>
+  <div class="hero-eyebrow">software engineer · b.tech cse</div>
   <h1 class="hero-title">PARITOSH CHAUHAN</h1>
 
   <div class="hero-center">
@@ -141,7 +180,7 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
     </div>
 
     <div class="hero-photo-wrap fade">
-      <div class="hero-photo has-photo"><img src="Gemini_Generated_Image_wg6s5wwg6s5wwg6s.png" alt="Paritosh photo"></div>
+      <div class="hero-photo"><img src="Gemini_Generated_Image_wg6s5wwg6s5wwg6s.png" alt="Paritosh photo" onerror="this.parentElement.innerHTML='🧑‍💻'"></div>
       <div class="status-badge">
         <span class="sdot"></span> Open to Internships &amp; Opportunities
       </div>
@@ -170,18 +209,71 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
   <img class="tool-icon" src="https://cdn.simpleicons.org/cplusplus" alt="C++" title="C++">
   <img class="tool-icon" src="https://cdn.simpleicons.org/react" alt="React.js" title="React.js">
   <img class="tool-icon" src="https://cdn.simpleicons.org/flask/000000" alt="Flask" title="Flask">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/fastapi" alt="FastAPI" title="FastAPI">
   <img class="tool-icon" src="https://cdn.simpleicons.org/opencv" alt="OpenCV" title="OpenCV">
-  <svg class="tool-icon" role="img" aria-label="AWS" title="AWS" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#FF9900" d="M19.36 10.04A5.5 5.5 0 0 0 13 6.5c-1.11 0-2.17.31-3.07.86A4 4 0 0 0 6 11.5C6 13.43 7.57 15 9.5 15h9c1.38 0 2.5-1.12 2.5-2.5 0-1.26-.97-2.28-1.64-2.46z"/>
-  </svg>
   <div class="tools-sep"></div>
+  <img class="tool-icon" src="https://cdn.simpleicons.org/docker" alt="Docker" title="Docker">
+  <img class="tool-icon" src="https://cdn.simpleicons.org/terraform" alt="Terraform" title="Terraform">
   <img class="tool-icon" src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" title="MongoDB">
   <img class="tool-icon" src="https://cdn.simpleicons.org/mysql" alt="MySQL" title="MySQL">
   <img class="tool-icon" src="https://cdn.simpleicons.org/git" alt="Git" title="Git">
-  <img class="tool-icon" src="https://cdn.simpleicons.org/github/000000" alt="GitHub" title="GitHub">
   <img class="tool-icon" src="https://cdn.simpleicons.org/linux" alt="Linux" title="Linux">
-  <img class="tool-icon" src="https://cdn.simpleicons.org/qemu" alt="QEMU" title="QEMU">
 </div>
+
+<!-- SKILLS SECTION -->
+<section class="skills-section">
+  <div class="skills-inner">
+    <div class="skills-header fade">
+      <span class="skills-title">Skills</span>
+      <span class="skills-sub">WHAT I WORK WITH</span>
+    </div>
+    <div class="skills-grid fade">
+      <div class="skill-category">
+        <div class="skill-cat-label"><i class="ti ti-code"></i> Languages</div>
+        <div class="skill-tag-list">
+          <span class="s-tag blue">C</span>
+          <span class="s-tag blue">C++</span>
+          <span class="s-tag blue">Python</span>
+          <span class="s-tag">NASM</span>
+          <span class="s-tag">Bash</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-label"><i class="ti ti-layout"></i> Frameworks & Libraries</div>
+        <div class="skill-tag-list">
+          <span class="s-tag purple">React.js</span>
+          <span class="s-tag amber">Flask</span>
+          <span class="s-tag green">FastAPI</span>
+          <span class="s-tag">OpenCV</span>
+          <span class="s-tag">DeepFace</span>
+          <span class="s-tag">NetworkX</span>
+          <span class="s-tag">Boto3</span>
+          <span class="s-tag">YARA</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-label"><i class="ti ti-database"></i> Databases</div>
+        <div class="skill-tag-list">
+          <span class="s-tag green">MongoDB</span>
+          <span class="s-tag blue">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-label"><i class="ti ti-cloud"></i> Tools & Cloud</div>
+        <div class="skill-tag-list">
+          <span class="s-tag amber">AWS</span>
+          <span class="s-tag">Docker</span>
+          <span class="s-tag red">Terraform</span>
+          <span class="s-tag">Git</span>
+          <span class="s-tag">GitHub</span>
+          <span class="s-tag">QEMU</span>
+          <span class="s-tag">Linux</span>
+          <span class="s-tag">REST APIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- MAIN LAYOUT -->
 <div class="main">
@@ -232,8 +324,8 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
       <div class="s-card fade">
         <div class="s-label">Quick Stats</div>
         <div class="stat-row">
-          <div class="stat-mini"><div class="n">4+</div><span class="l">Projects</span></div>
-          <div class="stat-mini"><div class="n">8.14</div><span class="l">CGPA</span></div>
+          <div class="stat-mini"><div class="n">6+</div><span class="l">Projects</span></div>
+          <div class="stat-mini"><div class="n">8.18</div><span class="l">CGPA</span></div>
           <div class="stat-mini"><div class="n">3</div><span class="l">AWS Certs</span></div>
         </div>
       </div>
@@ -266,7 +358,74 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
         <span style="font-family:var(--mono);font-size:10px;color:var(--faint)">2024 → present</span>
       </div>
 
-      <!-- PROJECT 1 -->
+      <!-- PROJECT 1 — LMS -->
+      <div class="card fade">
+        <div class="journey-item">
+          <div class="ji-icon">📚</div>
+          <div>
+            <div class="ji-head">
+              <span class="ji-title">Complete LMS (Learning Management System)</span>
+              <span class="ji-period">2025</span>
+            </div>
+            <div class="ji-role">Designed and built the full-stack LMS — course management, user auth, progress tracking, and responsive UI.</div>
+            <ul class="ji-desc">
+              <li>Full-featured platform for creating, publishing, and enrolling in courses with structured modules.</li>
+              <li>Secure user authentication with role-based access for instructors and students.</li>
+              <li>Real-time progress tracking, completion certificates, and an intuitive dashboard for learners.</li>
+            </ul>
+            <a href="https://complete-lms-eight.vercel.app/" target="_blank" class="live-link"><i class="ti ti-external-link"></i> Live Demo</a>
+            <div class="tag-row">
+              <span class="tag purple">React.js</span>
+              <span class="tag green">Node.js</span>
+              <span class="tag amber">Express</span>
+              <span class="tag blue">MongoDB</span>
+              <span class="tag">JWT Auth</span>
+              <span class="tag">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-stats">
+          <div class="proj-stat"><span class="ps-num">100%</span><span class="ps-label">Responsive UI</span></div>
+          <div class="proj-stat"><span class="ps-num">Role-Based</span><span class="ps-label">Access Control</span></div>
+          <div class="proj-stat"><span class="ps-num">Live</span><span class="ps-label">Deployed on Vercel</span></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 — AI AWS Cost Optimizer -->
+      <div class="card fade">
+        <div class="journey-item">
+          <div class="ji-icon">☁️</div>
+          <div>
+            <div class="ji-head">
+              <span class="ji-title">AI-Powered AWS Cost Optimizer</span>
+              <span class="ji-period">2025</span>
+            </div>
+            <div class="ji-role">Independently designed and developed the full-stack application — backend API, AWS integration, AI layer, and frontend dashboard.</div>
+            <ul class="ji-desc">
+              <li>Full-stack web app that connects to AWS accounts, scans EC2, EBS, RDS, and S3, and fetches real monthly spend via AWS Cost Explorer.</li>
+              <li>Multi-turn AI Chat Assistant lets non-technical stakeholders query AWS spending in plain language.</li>
+              <li>Containerized with Docker & Docker Compose; infrastructure provisioned via Terraform for repeatable deployments.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag blue">Python</span>
+              <span class="tag green">FastAPI</span>
+              <span class="tag purple">React 19</span>
+              <span class="tag amber">AWS</span>
+              <span class="tag">Boto3</span>
+              <span class="tag">Docker</span>
+              <span class="tag red">Terraform</span>
+              <span class="tag">Groq</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-stats">
+          <div class="proj-stat"><span class="ps-num">4</span><span class="ps-label">AWS Services Scanned</span></div>
+          <div class="proj-stat"><span class="ps-num">AI</span><span class="ps-label">Multi-turn Chat</span></div>
+          <div class="proj-stat"><span class="ps-num">IaC</span><span class="ps-label">Terraform Infra</span></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 — Emotion-Aware OS -->
       <div class="card fade">
         <div class="journey-item">
           <div class="ji-icon">🧠</div>
@@ -277,9 +436,9 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
             </div>
             <div class="ji-role">Built the entire multiprocessing pipeline, OS listener, real-time socket-mode handler, and did system benchmarking.</div>
             <ul class="ji-desc">
-              <li>Built an emotion-detecting OS using camera &amp; AI that adapts CPU and memory in real-time.</li>
-              <li>Developed a 32-bit kernel with UART serial I/O and dynamic schedulers (SJF, Round Robin, Lottery).</li>
-              <li>Created a Python emotion pipeline that switches between Calm / Relaxed / Stressed modes for better performance.</li>
+              <li>Emotion-detecting OS using camera &amp; AI that adapts CPU and memory allocation in real-time.</li>
+              <li>32-bit kernel with UART serial I/O and dynamic schedulers (SJF, Round Robin, Lottery).</li>
+              <li>Python emotion pipeline switching between Calm / Relaxed / Stressed modes for optimized performance.</li>
             </ul>
             <div class="tag-row">
               <span class="tag red">C / NASM</span>
@@ -288,19 +447,18 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
               <span class="tag amber">DeepFace</span>
               <span class="tag">QEMU</span>
               <span class="tag green">JSON Sockets</span>
-              <span class="tag">Tkinter</span>
               <span class="tag">Linux/Ubuntu</span>
             </div>
           </div>
         </div>
-        <div class="proj-img-row">
-          <div class="proj-img">🧠</div>
-          <div class="proj-img">⚙️</div>
-          <div class="proj-img">📊</div>
+        <div class="proj-stats">
+          <div class="proj-stat"><span class="ps-num">32-bit</span><span class="ps-label">Custom Kernel</span></div>
+          <div class="proj-stat"><span class="ps-num">3</span><span class="ps-label">Scheduler Algorithms</span></div>
+          <div class="proj-stat"><span class="ps-num">Real-time</span><span class="ps-label">CPU Adaptation</span></div>
         </div>
       </div>
 
-      <!-- PROJECT 2 -->
+      <!-- PROJECT 4 — Optimal Route Analyser -->
       <div class="card fade">
         <div class="journey-item">
           <div class="ji-icon">🗺️</div>
@@ -311,8 +469,8 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
             </div>
             <div class="ji-role">Integrated the route-optimization algorithm with mapping components and built the full visual map interface.</div>
             <ul class="ji-desc">
-              <li>Finds the fastest routes between multiple destinations using smart optimization logic.</li>
-              <li>Displays fully visible and accurate route paths on a map for easy travel planning.</li>
+              <li>Finds fastest routes between multiple destinations using smart graph-based optimization logic.</li>
+              <li>Displays accurate, fully visible route paths on an interactive map for easy travel planning.</li>
               <li>Supports multi-stop trip scheduling with data-driven, easy-to-understand route outputs.</li>
             </ul>
             <div class="tag-row">
@@ -324,14 +482,14 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
             </div>
           </div>
         </div>
-        <div class="proj-img-row">
-          <div class="proj-img">🗺️</div>
-          <div class="proj-img">🛣️</div>
-          <div class="proj-img">📍</div>
+        <div class="proj-stats">
+          <div class="proj-stat"><span class="ps-num">Multi-stop</span><span class="ps-label">Trip Planning</span></div>
+          <div class="proj-stat"><span class="ps-num">Graph</span><span class="ps-label">Optimization Engine</span></div>
+          <div class="proj-stat"><span class="ps-num">Live</span><span class="ps-label">Map Rendering</span></div>
         </div>
       </div>
 
-      <!-- PROJECT 3 -->
+      <!-- PROJECT 5 — Attendance System -->
       <div class="card fade">
         <div class="journey-item">
           <div class="ji-icon">👁️</div>
@@ -342,9 +500,9 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
             </div>
             <div class="ji-role">Independently enhanced the full system — computer vision pipeline, database design, and the user interface.</div>
             <ul class="ji-desc">
-              <li>Built a face-recognition system that automatically detects and tracks attendance accurately.</li>
+              <li>Face-recognition system that automatically detects and tracks attendance with high accuracy.</li>
               <li>Maintains secure, real-time attendance records in a structured database.</li>
-              <li>Provides a simple interface for registering users, managing face data, and viewing logs.</li>
+              <li>Simple interface for registering users, managing face data, and viewing attendance logs.</li>
             </ul>
             <div class="tag-row">
               <span class="tag blue">Python</span>
@@ -353,14 +511,14 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
             </div>
           </div>
         </div>
-        <div class="proj-img-row">
-          <div class="proj-img">📸</div>
-          <div class="proj-img">🗄️</div>
-          <div class="proj-img">✅</div>
+        <div class="proj-stats">
+          <div class="proj-stat"><span class="ps-num">Face</span><span class="ps-label">Recognition CV</span></div>
+          <div class="proj-stat"><span class="ps-num">Real-time</span><span class="ps-label">DB Records</span></div>
+          <div class="proj-stat"><span class="ps-num">Auto</span><span class="ps-label">Attendance Tracking</span></div>
         </div>
       </div>
 
-      <!-- PROJECT 4 -->
+      <!-- PROJECT 6 — File & Malware Analyzer -->
       <div class="card fade">
         <div class="journey-item">
           <div class="ji-icon">🔒</div>
@@ -384,10 +542,10 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
             </div>
           </div>
         </div>
-        <div class="proj-img-row">
-          <div class="proj-img">🔍</div>
-          <div class="proj-img">🛡️</div>
-          <div class="proj-img">📋</div>
+        <div class="proj-stats">
+          <div class="proj-stat"><span class="ps-num">Static + Dynamic</span><span class="ps-label">Analysis Modes</span></div>
+          <div class="proj-stat"><span class="ps-num">YARA</span><span class="ps-label">Rule-based Detection</span></div>
+          <div class="proj-stat"><span class="ps-num">Auto</span><span class="ps-label">Security Reports</span></div>
         </div>
       </div>
 
@@ -417,8 +575,29 @@ footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;col
   </div>
 </div>
 
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-eyebrow fade">GET IN TOUCH</div>
+    <h2 class="contact-heading fade">Let's build something together.</h2>
+    <p class="contact-sub fade">Open to internships, collaborations, and interesting projects. Whether you have an opportunity or just want to say hello — my inbox is always open.</p>
+    <a href="mailto:chauhan.paritosh01@gmail.com" class="contact-cta fade">
+      <i class="ti ti-mail"></i> chauhan.paritosh01@gmail.com
+    </a>
+    <div class="contact-links-row fade">
+      <a href="https://github.com/paritoshchauhan01" target="_blank" class="c-link"><i class="ti ti-brand-github"></i> GitHub</a>
+      <div class="contact-divider"></div>
+      <a href="https://linkedin.com/in/paritosh-chauhan-144499244" target="_blank" class="c-link"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <div class="contact-divider"></div>
+      <a href="tel:+918791741601" class="c-link"><i class="ti ti-phone"></i> +91 8791741601</a>
+      <div class="contact-divider"></div>
+      <span class="c-link"><i class="ti ti-map-pin"></i> Dehradun, India</span>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>Paritosh Chauhan · chauhan.paritosh01@gmail.com ·</p>
+  <p>Paritosh Chauhan · chauhan.paritosh01@gmail.com · Dehradun, India</p>
 </footer>
 
 <script>
